@@ -2,6 +2,7 @@ bits 16
 
 msg:    db "Hello World!", 0
 buffer: times 50 db 0
+cursor: db 0
 
 setup:
 	mov ax, 0x7C0
@@ -68,6 +69,9 @@ movecursor:
 	int 0x10
 
 	popa
+
+	
+
 	mov sp, bp
 	pop bp
 	ret
